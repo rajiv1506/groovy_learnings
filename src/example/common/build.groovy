@@ -7,8 +7,10 @@ def build(){
         container("maven"){
             scriptwithMaven(maven: 'maven',jdk: java17){
                 script.sh "mvn package source:jar deploy -U"
+            }
         }
-        }
-        
+    }
+    catch(exc){
+        throw exc
     }
 }
