@@ -5,8 +5,8 @@ def build(){
 
     try{
         node {
-            container("maven"){
-                scriptwithMaven(maven: 'maven',jdk: java17){
+            container('maven:3.8.2-openjdk-17'){
+                script.withMaven(maven: 'maven',jdk: java17){
                     script.sh "mvn package source:jar deploy -U"
                 }
             }
