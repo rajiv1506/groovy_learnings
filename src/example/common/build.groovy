@@ -12,7 +12,7 @@ def build(){
             }
         }
     }
-    catch(exc){
-        throw exc
+    catch(ExceptionType e){
+        println(e.message)
     }
 }
